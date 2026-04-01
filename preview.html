@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKD Trump Cards — Game Demo</title>
+  <meta name="description" content="Try the TKD Trump Cards game demo. Battle students against each other and against legendary fighters like Bruce Lee, Chuck Norris, Jackie Chan and Ip Man." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Rajdhani:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .preview-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(232,0,29,0.12) 0%, transparent 70%);
+    }
+    .preview-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.5rem); margin-bottom: 16px; }
+    .preview-hero p { font-size: 1.1rem; color: var(--white60); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--white30); font-size: 0.9rem; margin-bottom: 16px; transition: color 0.2s; }
+    .back-link:hover { color: var(--white); }
+    .full-preview { padding: 0 0 100px; }
+    .tab-section { background: var(--dark); border-radius: 24px; padding: 48px; margin-bottom: 32px; }
+    .tab-section h2 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px; letter-spacing: 0.05em; }
+    .tab-section p { color: var(--white60); margin-bottom: 32px; font-size: 0.95rem; line-height: 1.7; }
+    .legend-section-title { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px; letter-spacing: 0.05em; }
+    .cta-banner { background: linear-gradient(135deg, rgba(232,0,29,0.15), rgba(245,200,0,0.08)); border: 1px solid rgba(245,200,0,0.2); border-radius: 24px; padding: 48px; text-align: center; }
+    .cta-banner h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 12px; }
+    .cta-banner p { color: var(--white60); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">TKD <span>TRUMP CARDS</span></a>
+    <div class="nav-links">
+      <a href="index.html#preview">Overview</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="preview.html" style="color:var(--gold);">Game Demo</a>
+    </div>
+    <a href="index.html#cta" class="nav-cta">Get Your Licence →</a>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="index.html#how" onclick="toggleMobileMenu()">How It Works</a>
+    <a href="index.html#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="index.html#cta" class="mobile-cta" onclick="toggleMobileMenu()">Get Your Licence →</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="preview-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to main site</a>
+      <h1>🃏 Game <span class="gold">Demo</span></h1>
+      <p>This is what your students will play. Every student in your club gets their own personalised card — and they can battle each other and legendary fighters.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html#cta" class="btn-primary">Get Your Club's Game — £99.99</a>
+        <a href="index.html#calculator" class="btn-secondary">See Revenue Calculator</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL PREVIEW -->
+  <div class="full-preview">
+    <div class="container">
+
+      <!-- STUDENT VS STUDENT -->
+      <div class="tab-section">
+        <h2>🆚 Student vs Student</h2>
+        <p>Students pick a stat and the highest score wins the round — and takes both cards. The player who collects all the cards wins the game.</p>
+        <div class="battle-arena">
+          <div class="trump-card" id="sv-card-player">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#1a0a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="svp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5C800" stop-opacity="0.9"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="38" rx="10" ry="12" fill="url(#svp1)"/>
+                <rect x="82" y="48" width="16" height="28" rx="4" fill="url(#svp1)"/>
+                <line x1="82" y1="52" x2="62" y2="38" stroke="url(#svp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="52" x2="112" y2="65" stroke="url(#svp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="86" y1="76" x2="80" y2="105" stroke="url(#svp1)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="76" x2="130" y2="48" stroke="url(#svp1)" stroke-width="8" stroke-linecap="round"/>
+                <ellipse cx="133" cy="45" rx="8" ry="5" fill="url(#svp1)" transform="rotate(-30 133 45)"/>
+                <rect x="82" y="72" width="16" height="4" rx="2" fill="#1a1a1a"/>
+                <ellipse cx="90" cy="90" rx="40" ry="8" fill="rgba(245,200,0,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Jamie K.</div><div class="card-belt">● Black Belt 1st Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="87"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:87%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">87</span></div>
+              <div class="stat-row" data-stat="speed" data-val="92"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:92%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">92</span></div>
+              <div class="stat-row" data-stat="technique" data-val="85"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:85%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">85</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="78"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:78%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">78</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="83"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:83%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">83</span></div>
+              <div class="stat-row" data-stat="aura" data-val="76"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:76%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">76</span></div>
+            </div>
+          </div>
+          <div class="battle-stat-selector">
+            <h4>⚔ Pick Your Stat</h4>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','power',87,74,event)"><span>Power</span><span class="spb-val">87</span></button>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','speed',92,88,event)"><span>Speed</span><span class="spb-val">92</span></button>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','technique',85,91,event)"><span>Technique</span><span class="spb-val">85</span></button>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','flexibility',78,69,event)"><span>Flexibility</span><span class="spb-val">78</span></button>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','stamina',83,80,event)"><span>Stamina</span><span class="spb-val">83</span></button>
+            <button class="stat-pick-btn" onclick="doBattle2('sv','aura',76,82,event)"><span>Aura</span><span class="spb-val">76</span></button>
+            <div class="battle-result" id="sv-result"></div>
+            <div class="battle-controls"><button class="btn-battle primary" onclick="resetBattle2('sv')">🔄 New Round</button></div>
+          </div>
+          <div class="trump-card" id="sv-card-opponent">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#0a1a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="svp2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.9"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="35" rx="10" ry="12" fill="url(#svp2)"/>
+                <rect x="82" y="46" width="16" height="28" rx="4" fill="url(#svp2)"/>
+                <line x1="82" y1="50" x2="65" y2="42" stroke="url(#svp2)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="50" x2="115" y2="42" stroke="url(#svp2)" stroke-width="7" stroke-linecap="round"/>
+                <ellipse cx="63" cy="40" rx="6" ry="5" fill="url(#svp2)"/>
+                <ellipse cx="117" cy="40" rx="6" ry="5" fill="url(#svp2)"/>
+                <line x1="86" y1="74" x2="76" y2="105" stroke="url(#svp2)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="74" x2="108" y2="105" stroke="url(#svp2)" stroke-width="8" stroke-linecap="round"/>
+                <rect x="82" y="70" width="16" height="4" rx="2" fill="#1a1a1a"/>
+                <ellipse cx="90" cy="95" rx="40" ry="8" fill="rgba(96,165,250,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Alex M.</div><div class="card-belt">● Black Belt 2nd Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="74"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:74%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">74</span></div>
+              <div class="stat-row" data-stat="speed" data-val="88"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:88%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">88</span></div>
+              <div class="stat-row" data-stat="technique" data-val="91"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:91%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">91</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="69"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:69%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">69</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="80"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:80%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">80</span></div>
+              <div class="stat-row" data-stat="aura" data-val="82"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:82%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">82</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENT VS LEGENDS -->
+      <div class="tab-section">
+        <h2>⚡ Student vs Legendary Fighters</h2>
+        <p>Every game includes legendary fighter cards. Students try to beat the masters — Bruce Lee's Speed is 99, Chuck Norris's Power is 99. Can your students find a stat to win?</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">
+          <button class="legend-btn selected" onclick="selectLegend2('bruce')" id="p-btn-bruce">🐉 Bruce Lee</button>
+          <button class="legend-btn" onclick="selectLegend2('chuck')" id="p-btn-chuck">🤠 Chuck Norris</button>
+          <button class="legend-btn" onclick="selectLegend2('jackie')" id="p-btn-jackie">🎬 Jackie Chan</button>
+          <button class="legend-btn" onclick="selectLegend2('ip')" id="p-btn-ip">🧘 Ip Man</button>
+        </div>
+        <div class="battle-arena">
+          <div class="trump-card" id="lv-card-player">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#1a0a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="lvp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5C800" stop-opacity="0.9"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="38" rx="10" ry="12" fill="url(#lvp1)"/>
+                <rect x="82" y="48" width="16" height="28" rx="4" fill="url(#lvp1)"/>
+                <line x1="82" y1="52" x2="62" y2="38" stroke="url(#lvp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="52" x2="112" y2="65" stroke="url(#lvp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="86" y1="76" x2="80" y2="105" stroke="url(#lvp1)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="76" x2="130" y2="48" stroke="url(#lvp1)" stroke-width="8" stroke-linecap="round"/>
+                <ellipse cx="133" cy="45" rx="8" ry="5" fill="url(#lvp1)" transform="rotate(-30 133 45)"/>
+                <rect x="82" y="72" width="16" height="4" rx="2" fill="#1a1a1a"/>
+                <ellipse cx="90" cy="90" rx="40" ry="8" fill="rgba(245,200,0,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Jamie K.</div><div class="card-belt">● Black Belt 1st Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="87"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:87%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">87</span></div>
+              <div class="stat-row" data-stat="speed" data-val="92"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:92%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">92</span></div>
+              <div class="stat-row" data-stat="technique" data-val="85"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:85%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">85</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="78"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:78%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">78</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="83"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:83%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">83</span></div>
+              <div class="stat-row" data-stat="aura" data-val="76"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:76%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">76</span></div>
+            </div>
+          </div>
+          <div class="battle-stat-selector">
+            <h4>⚔ Pick Your Stat</h4>
+            <button class="stat-pick-btn" id="pvbtn-power" onclick="doBattle2('lv','power',87,88,event)"><span>Power</span><span class="spb-val">87</span></button>
+            <button class="stat-pick-btn" id="pvbtn-speed" onclick="doBattle2('lv','speed',92,99,event)"><span>Speed</span><span class="spb-val">92</span></button>
+            <button class="stat-pick-btn" id="pvbtn-technique" onclick="doBattle2('lv','technique',85,99,event)"><span>Technique</span><span class="spb-val">85</span></button>
+            <button class="stat-pick-btn" id="pvbtn-flexibility" onclick="doBattle2('lv','flexibility',78,97,event)"><span>Flexibility</span><span class="spb-val">78</span></button>
+            <button class="stat-pick-btn" id="pvbtn-stamina" onclick="doBattle2('lv','stamina',83,94,event)"><span>Stamina</span><span class="spb-val">83</span></button>
+            <button class="stat-pick-btn" id="pvbtn-aura" onclick="doBattle2('lv','aura',76,100,event)"><span>Aura</span><span class="spb-val">76</span></button>
+            <div class="battle-result" id="lv-result"></div>
+            <div class="battle-controls"><button class="btn-battle primary" onclick="resetBattle2('lv')">🔄 New Round</button></div>
+          </div>
+          <div class="trump-card legendary" id="lv-card-legend">
+            <div class="card-header"><span class="card-club" id="p-legend-club">LEGENDS</span><span class="card-rarity rarity-legend">LEGEND</span></div>
+            <div class="card-portrait" id="p-legend-portrait" style="background:linear-gradient(160deg,#1a0800,#0a0500);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" id="p-legend-svg">
+                <defs><linearGradient id="plg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6b00" stop-opacity="0.95"/><stop offset="100%" stop-color="#cc4400" stop-opacity="0.8"/></linearGradient></defs>
+                <ellipse cx="55" cy="30" rx="10" ry="11" fill="url(#plg)"/>
+                <path d="M55 40 Q60 55 65 70" stroke="url(#plg)" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <line x1="58" y1="48" x2="130" y2="45" stroke="url(#plg)" stroke-width="7" stroke-linecap="round"/>
+                <ellipse cx="133" cy="44" rx="7" ry="6" fill="url(#plg)"/>
+                <line x1="55" y1="50" x2="35" y2="60" stroke="url(#plg)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="63" y1="68" x2="140" y2="72" stroke="url(#plg)" stroke-width="9" stroke-linecap="round"/>
+                <ellipse cx="143" cy="72" rx="9" ry="6" fill="url(#plg)" transform="rotate(-5 143 72)"/>
+                <line x1="58" y1="70" x2="48" y2="108" stroke="url(#plg)" stroke-width="9" stroke-linecap="round"/>
+                <ellipse cx="90" cy="100" rx="50" ry="8" fill="rgba(255,107,0,0.12)"/>
+              </svg>
+            </div>
+            <div class="card-name-band">
+              <div class="card-name" id="p-legend-name">Bruce Lee</div>
+              <div class="card-belt" style="color:#ff6b00;" id="p-legend-title">🐉 The Dragon · Jeet Kune Do</div>
+            </div>
+            <div class="card-stats" id="p-legend-stats">
+              <div class="stat-row" data-stat="power" data-val="88"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:88%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">88</span></div>
+              <div class="stat-row" data-stat="speed" data-val="99"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:99%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">99</span></div>
+              <div class="stat-row" data-stat="technique" data-val="99"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:99%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">99</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="97"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:97%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">97</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="94"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:94%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">94</span></div>
+              <div class="stat-row" data-stat="aura" data-val="100"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">100</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD GALLERY -->
+      <div class="tab-section">
+        <h2>🃏 Card Gallery</h2>
+        <p>Every belt grade produces a different card rarity. Black belts get the strongest stats. Legendary fighter cards are included in every game — they're nearly impossible to beat.</p>
+        <div class="card-gallery" id="previewGallery"></div>
+        <p style="margin-top:20px;font-size:0.85rem;color:var(--white30);">Real student photos replace the silhouettes once uploaded and approved by the instructor. Stats are calculated from belt grade, training years, and competition record.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-banner">
+        <h2>Ready to launch your club's game?</h2>
+        <p>220 students signed up in 14 days. £557.81 net in week one. Your students. Your cards. Your income.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="index.html#cta" class="btn-primary">🥋 Get My Club's Game — £99.99</a>
+          <a href="index.html#calculator" class="btn-secondary">See Revenue Calculator</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:center;gap:24px;">
+        <a href="index.html" class="footer-link">← Back to main site</a>
+        <span style="color:var(--white30);">© 2026 TKD Trump Cards</span>
+        <a href="index.html#cta" class="footer-link" style="color:var(--gold);">Get Your Licence →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cards.js"></script>
+  <script>
+    // Preview page battle logic (separate IDs from index.html)
+    function doBattle2(prefix, stat, playerVal, oppVal, e) {
+      const resultEl = document.getElementById(`${prefix}-result`);
+      const playerCard = document.getElementById(`${prefix}-card-player`);
+      const oppCard = prefix === 'sv'
+        ? document.getElementById('sv-card-opponent')
+        : document.getElementById('lv-card-legend');
+
+      document.querySelectorAll(`#${prefix}-card-player .stat-row`).forEach(r => {
+        r.classList.toggle('highlighted', r.dataset.stat === stat);
+      });
+      if (oppCard) oppCard.querySelectorAll('.stat-row').forEach(r => {
+        r.classList.toggle('highlighted', r.dataset.stat === stat);
+      });
+
+      const btns = document.querySelectorAll(`#${prefix === 'sv' ? 'sv' : 'lv'}-card-player`).length > 0
+        ? document.querySelectorAll(`[id^="${prefix}-card-player"] ~ .battle-stat-selector .stat-pick-btn`)
+        : [];
+
+      playerCard.classList.remove('win-glow','lose-fade');
+      if (oppCard) oppCard.classList.remove('win-glow','lose-fade');
+      resultEl.className = 'battle-result';
+
+      if (e && e.currentTarget) {
+        e.currentTarget.parentElement.querySelectorAll('.stat-pick-btn').forEach(b => b.classList.remove('selected','win','lose','draw'));
+        if (playerVal > oppVal) e.currentTarget.classList.add('win');
+        else if (playerVal < oppVal) e.currentTarget.classList.add('lose');
+        else e.currentTarget.classList.add('draw');
+      }
+
+      if (playerVal > oppVal) {
+        resultEl.textContent = `🏆 YOU WIN! ${playerVal} vs ${oppVal}`;
+        resultEl.classList.add('win');
+        playerCard.classList.add('win-glow');
+        if (oppCard) oppCard.classList.add('lose-fade');
+      } else if (playerVal < oppVal) {
+        resultEl.textContent = `💀 YOU LOSE! ${playerVal} vs ${oppVal}`;
+        resultEl.classList.add('lose');
+        if (oppCard) oppCard.classList.add('win-glow');
+        playerCard.classList.add('lose-fade');
+      } else {
+        resultEl.textContent = `🤝 DRAW! ${playerVal} vs ${oppVal}`;
+        resultEl.classList.add('draw');
+      }
+    }
+
+    function resetBattle2(prefix) {
+      document.getElementById(`${prefix}-result`).textContent = '';
+      document.getElementById(`${prefix}-result`).className = 'battle-result';
+      document.getElementById(`${prefix}-card-player`).classList.remove('win-glow','lose-fade');
+      const opp = prefix === 'sv' ? document.getElementById('sv-card-opponent') : document.getElementById('lv-card-legend');
+      if (opp) opp.classList.remove('win-glow','lose-fade');
+      document.querySelectorAll(`#${prefix}-card-player .stat-row`).forEach(r => r.classList.remove('highlighted'));
+      if (opp) opp.querySelectorAll('.stat-row').forEach(r => r.classList.remove('highlighted'));
+    }
+
+    function selectLegend2(key) {
+      const legend = LEGENDS[key];
+      ['bruce','chuck','jackie','ip'].forEach(k => {
+        const btn = document.getElementById(`p-btn-${k}`);
+        if (btn) btn.classList.toggle('selected', k === key);
+      });
+      document.getElementById('p-legend-name').textContent = legend.name;
+      const titleEl = document.getElementById('p-legend-title');
+      titleEl.textContent = legend.title; titleEl.style.color = legend.color;
+      document.getElementById('p-legend-portrait').style.background = legend.gradient;
+      document.getElementById('p-legend-svg').innerHTML = legend.svg;
+      const statKeys = ['power','speed','technique','flexibility','stamina','aura'];
+      const statNames = ['Power','Speed','Technique','Flexibility','Stamina','Aura'];
+      document.getElementById('p-legend-stats').innerHTML = statKeys.map((k,i) => `
+        <div class="stat-row" data-stat="${k}" data-val="${legend.stats[k]}">
+          <span class="stat-name">${statNames[i]}</span>
+          <div class="stat-bar-wrap"><div class="stat-bar" style="width:${legend.stats[k]}%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div>
+          <span class="stat-val">${legend.stats[k]}</span>
+        </div>`).join('');
+      statKeys.forEach(k => {
+        const btn = document.getElementById(`pvbtn-${k}`);
+        if (btn) btn.setAttribute('onclick', `doBattle2('lv','${k}',${k==='speed'?92:k==='power'?87:k==='technique'?85:k==='flexibility'?78:k==='stamina'?83:76},${legend.stats[k]},event)`);
+      });
+      resetBattle2('lv');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const gallery = document.getElementById('previewGallery');
+      if (gallery) gallery.innerHTML = GALLERY_CARDS.map(c => buildCardHTML(c)).join('');
+      selectLegend2('bruce');
+    });
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKD Trump Cards — Launch a Card Game for Your Martial Arts Club</title>
+  <meta name="description" content="Turn your students into collectible trading cards. Your club's own Top Trumps game — students pay £2.99, you keep the revenue. 220 sign-ups in 14 days. £557 net in week one." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">TKD <span>TRUMP CARDS</span></a>
+    <div class="nav-links">
+      <a href="#preview">Game Preview</a>
+      <a href="#how">How It Works</a>
+      <a href="#calculator">Revenue</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="preview.html">Live Demo</a>
+    </div>
+    <a href="#cta" class="nav-cta">Get Your Licence →</a>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#preview" onclick="toggleMobileMenu()">Game Preview</a>
+    <a href="#how" onclick="toggleMobileMenu()">How It Works</a>
+    <a href="#calculator" onclick="toggleMobileMenu()">Revenue</a>
+    <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="preview.html" onclick="toggleMobileMenu()">Live Demo</a>
+    <a href="#cta" class="mobile-cta" onclick="toggleMobileMenu()">Get Your Licence →</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          220 students signed up in 14 days
+        </div>
+        <h1 class="hero-title">
+          Your students.<br>
+          Their own <span class="gold">trading cards.</span><br>
+          Your <span class="red">revenue.</span>
+        </h1>
+        <p class="hero-sub">
+          Turn every student in your martial arts club into a collectible Top Trumps card. They pay £2.99 to unlock their card and play the game — the money goes straight to you.
+        </p>
+        <div class="hero-buttons">
+          <a href="#cta" class="btn-primary">🥋 Get Your Club's Game — £99.99</a>
+          <a href="preview.html" class="btn-secondary">▶ See the Game Demo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">220</div>
+            <div class="label">Sign-ups in 14 days</div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <div class="number">£657</div>
+            <div class="label">Gross week one</div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <div class="number">£558</div>
+            <div class="label">Net after licence</div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <div class="number">34</div>
+            <div class="label">Students to break even</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <div id="proof-strip">
+    <div class="proof-strip-inner">
+      <div class="proof-item"><div class="num">£99.99</div><div class="desc">One-time licence</div></div>
+      <div class="proof-item"><div class="num">£2.99</div><div class="desc">Per student · goes to you</div></div>
+      <div class="proof-item"><div class="num">0%</div><div class="desc">We take of your revenue</div></div>
+      <div class="proof-item"><div class="num">48h</div><div class="desc">To go live</div></div>
+      <div class="proof-item"><div class="num">∞</div><div class="desc">Students supported</div></div>
+    </div>
+  </div>
+
+  <!-- GAME PREVIEW -->
+  <section id="preview">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label fade-up">The Game</span>
+        <h2 class="section-title fade-up fade-up-delay-1">See what your students will play</h2>
+        <p class="section-sub fade-up fade-up-delay-2" style="margin:0 auto 36px;">Every student gets their own personalised card with real stats. They battle each other — and legendary fighters like Bruce Lee and Chuck Norris.</p>
+      </div>
+      <div class="preview-tabs">
+        <button class="preview-tab active" onclick="switchTab('student')">🆚 Student vs Student</button>
+        <button class="preview-tab" onclick="switchTab('legend')">⚡ vs Legends</button>
+        <button class="preview-tab" onclick="switchTab('cards')">🃏 Card Gallery</button>
+      </div>
+
+      <!-- STUDENT VS STUDENT -->
+      <div class="preview-panel active" id="panel-student">
+        <div style="text-align:center;margin-bottom:24px;">
+          <span class="mode-label student-mode">Student vs Student Battle</span>
+          <p style="color:var(--white60);font-size:0.9rem;margin-top:8px;">Pick a stat — highest score wins the round and takes both cards</p>
+        </div>
+        <div class="battle-arena">
+          <div class="trump-card" id="s-card-player">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#1a0a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="sp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5C800" stop-opacity="0.9"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="38" rx="10" ry="12" fill="url(#sp1)"/>
+                <rect x="82" y="48" width="16" height="28" rx="4" fill="url(#sp1)"/>
+                <line x1="82" y1="52" x2="62" y2="38" stroke="url(#sp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="52" x2="112" y2="65" stroke="url(#sp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="86" y1="76" x2="80" y2="105" stroke="url(#sp1)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="76" x2="130" y2="48" stroke="url(#sp1)" stroke-width="8" stroke-linecap="round"/>
+                <ellipse cx="133" cy="45" rx="8" ry="5" fill="url(#sp1)" transform="rotate(-30 133 45)"/>
+                <ellipse cx="90" cy="90" rx="40" ry="8" fill="rgba(245,200,0,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Jamie K.</div><div class="card-belt">● Black Belt 1st Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="87"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:87%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">87</span></div>
+              <div class="stat-row" data-stat="speed" data-val="92"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:92%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">92</span></div>
+              <div class="stat-row" data-stat="technique" data-val="85"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:85%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">85</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="78"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:78%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">78</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="83"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:83%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">83</span></div>
+              <div class="stat-row" data-stat="aura" data-val="76"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:76%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">76</span></div>
+            </div>
+          </div>
+          <div class="battle-stat-selector">
+            <h4>⚔ Pick Your Stat</h4>
+            <button class="stat-pick-btn" onclick="doBattle('student','power',87,74,event)"><span>Power</span><span class="spb-val">87</span></button>
+            <button class="stat-pick-btn" onclick="doBattle('student','speed',92,88,event)"><span>Speed</span><span class="spb-val">92</span></button>
+            <button class="stat-pick-btn" onclick="doBattle('student','technique',85,91,event)"><span>Technique</span><span class="spb-val">85</span></button>
+            <button class="stat-pick-btn" onclick="doBattle('student','flexibility',78,69,event)"><span>Flexibility</span><span class="spb-val">78</span></button>
+            <button class="stat-pick-btn" onclick="doBattle('student','stamina',83,80,event)"><span>Stamina</span><span class="spb-val">83</span></button>
+            <button class="stat-pick-btn" onclick="doBattle('student','aura',76,82,event)"><span>Aura</span><span class="spb-val">76</span></button>
+            <div class="battle-result" id="s-result"></div>
+            <div class="battle-controls"><button class="btn-battle primary" onclick="resetBattle('student')">🔄 New Round</button></div>
+          </div>
+          <div class="trump-card" id="s-card-opponent">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#0a1a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="sp2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.9"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="35" rx="10" ry="12" fill="url(#sp2)"/>
+                <rect x="82" y="46" width="16" height="28" rx="4" fill="url(#sp2)"/>
+                <line x1="82" y1="50" x2="65" y2="42" stroke="url(#sp2)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="50" x2="115" y2="42" stroke="url(#sp2)" stroke-width="7" stroke-linecap="round"/>
+                <ellipse cx="63" cy="40" rx="6" ry="5" fill="url(#sp2)"/>
+                <ellipse cx="117" cy="40" rx="6" ry="5" fill="url(#sp2)"/>
+                <line x1="86" y1="74" x2="76" y2="105" stroke="url(#sp2)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="74" x2="108" y2="105" stroke="url(#sp2)" stroke-width="8" stroke-linecap="round"/>
+                <ellipse cx="90" cy="95" rx="40" ry="8" fill="rgba(96,165,250,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Alex M.</div><div class="card-belt">● Black Belt 2nd Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="74"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:74%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">74</span></div>
+              <div class="stat-row" data-stat="speed" data-val="88"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:88%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">88</span></div>
+              <div class="stat-row" data-stat="technique" data-val="91"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:91%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">91</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="69"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:69%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">69</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="80"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:80%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">80</span></div>
+              <div class="stat-row" data-stat="aura" data-val="82"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:82%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">82</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENT VS LEGENDS -->
+      <div class="preview-panel" id="panel-legend">
+        <div style="text-align:center;margin-bottom:24px;">
+          <span class="mode-label legend-mode">Student vs Legendary Fighter</span>
+          <p style="color:var(--white60);font-size:0.9rem;margin-top:8px;">Can your student find a stat to beat the masters?</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;">
+          <button class="legend-btn selected" onclick="selectLegend('bruce')" id="btn-bruce">🐉 Bruce Lee</button>
+          <button class="legend-btn" onclick="selectLegend('chuck')" id="btn-chuck">🤠 Chuck Norris</button>
+          <button class="legend-btn" onclick="selectLegend('jackie')" id="btn-jackie">🎬 Jackie Chan</button>
+          <button class="legend-btn" onclick="selectLegend('ip')" id="btn-ip">🧘 Ip Man</button>
+        </div>
+        <div class="battle-arena">
+          <div class="trump-card" id="l-card-player">
+            <div class="card-header"><span class="card-club">Train TKD</span><span class="card-rarity rarity-black">BLACK</span></div>
+            <div class="card-portrait" style="background:linear-gradient(160deg,#1a0a2e,#0a0a1a);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="lp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5C800" stop-opacity="0.9"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0.7"/></linearGradient></defs>
+                <ellipse cx="90" cy="38" rx="10" ry="12" fill="url(#lp1)"/>
+                <rect x="82" y="48" width="16" height="28" rx="4" fill="url(#lp1)"/>
+                <line x1="82" y1="52" x2="62" y2="38" stroke="url(#lp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="98" y1="52" x2="112" y2="65" stroke="url(#lp1)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="86" y1="76" x2="80" y2="105" stroke="url(#lp1)" stroke-width="8" stroke-linecap="round"/>
+                <line x1="94" y1="76" x2="130" y2="48" stroke="url(#lp1)" stroke-width="8" stroke-linecap="round"/>
+                <ellipse cx="133" cy="45" rx="8" ry="5" fill="url(#lp1)" transform="rotate(-30 133 45)"/>
+                <ellipse cx="90" cy="90" rx="40" ry="8" fill="rgba(245,200,0,0.08)"/>
+              </svg>
+            </div>
+            <div class="card-name-band"><div class="card-name">Jamie K.</div><div class="card-belt">● Black Belt 1st Dan</div></div>
+            <div class="card-stats">
+              <div class="stat-row" data-stat="power" data-val="87"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:87%;background:linear-gradient(90deg,#E8001D,#ff4444);"></div></div><span class="stat-val">87</span></div>
+              <div class="stat-row" data-stat="speed" data-val="92"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:92%;background:linear-gradient(90deg,#F5C800,#ffdd44);"></div></div><span class="stat-val">92</span></div>
+              <div class="stat-row" data-stat="technique" data-val="85"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:85%;background:linear-gradient(90deg,#60a5fa,#93c5fd);"></div></div><span class="stat-val">85</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="78"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:78%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div><span class="stat-val">78</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="83"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:83%;background:linear-gradient(90deg,#34d399,#6ee7b7);"></div></div><span class="stat-val">83</span></div>
+              <div class="stat-row" data-stat="aura" data-val="76"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:76%;background:linear-gradient(90deg,#f472b6,#f9a8d4);"></div></div><span class="stat-val">76</span></div>
+            </div>
+          </div>
+          <div class="battle-stat-selector">
+            <h4>⚔ Pick Your Stat</h4>
+            <button class="stat-pick-btn" id="lbtn-power" onclick="doBattle('legend','power',87,88,event)"><span>Power</span><span class="spb-val">87</span></button>
+            <button class="stat-pick-btn" id="lbtn-speed" onclick="doBattle('legend','speed',92,99,event)"><span>Speed</span><span class="spb-val">92</span></button>
+            <button class="stat-pick-btn" id="lbtn-technique" onclick="doBattle('legend','technique',85,99,event)"><span>Technique</span><span class="spb-val">85</span></button>
+            <button class="stat-pick-btn" id="lbtn-flexibility" onclick="doBattle('legend','flexibility',78,97,event)"><span>Flexibility</span><span class="spb-val">78</span></button>
+            <button class="stat-pick-btn" id="lbtn-stamina" onclick="doBattle('legend','stamina',83,94,event)"><span>Stamina</span><span class="spb-val">83</span></button>
+            <button class="stat-pick-btn" id="lbtn-aura" onclick="doBattle('legend','aura',76,100,event)"><span>Aura</span><span class="spb-val">76</span></button>
+            <div class="battle-result" id="l-result"></div>
+            <div class="battle-controls"><button class="btn-battle primary" onclick="resetBattle('legend')">🔄 New Round</button></div>
+          </div>
+          <div class="trump-card legendary" id="l-card-legend">
+            <div class="card-header"><span class="card-club" id="legend-club-label">LEGENDS</span><span class="card-rarity rarity-legend">LEGEND</span></div>
+            <div class="card-portrait" id="legend-portrait" style="background:linear-gradient(160deg,#1a0800,#0a0500);">
+              <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" id="legend-svg">
+                <defs><linearGradient id="blg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6b00" stop-opacity="0.95"/><stop offset="100%" stop-color="#cc4400" stop-opacity="0.8"/></linearGradient></defs>
+                <ellipse cx="55" cy="30" rx="10" ry="11" fill="url(#blg)"/>
+                <path d="M55 40 Q60 55 65 70" stroke="url(#blg)" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <line x1="58" y1="48" x2="130" y2="45" stroke="url(#blg)" stroke-width="7" stroke-linecap="round"/>
+                <ellipse cx="133" cy="44" rx="7" ry="6" fill="url(#blg)"/>
+                <line x1="55" y1="50" x2="35" y2="60" stroke="url(#blg)" stroke-width="7" stroke-linecap="round"/>
+                <line x1="63" y1="68" x2="140" y2="72" stroke="url(#blg)" stroke-width="9" stroke-linecap="round"/>
+                <ellipse cx="143" cy="72" rx="9" ry="6" fill="url(#blg)" transform="rotate(-5 143 72)"/>
+                <line x1="58" y1="70" x2="48" y2="108" stroke="url(#blg)" stroke-width="9" stroke-linecap="round"/>
+                <ellipse cx="90" cy="100" rx="50" ry="8" fill="rgba(255,107,0,0.12)"/>
+              </svg>
+            </div>
+            <div class="card-name-band">
+              <div class="card-name" id="legend-name">Bruce Lee</div>
+              <div class="card-belt" style="color:#ff6b00;" id="legend-title">🐉 The Dragon · Jeet Kune Do</div>
+            </div>
+            <div class="card-stats" id="legend-stats">
+              <div class="stat-row" data-stat="power" data-val="88"><span class="stat-name">Power</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:88%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">88</span></div>
+              <div class="stat-row" data-stat="speed" data-val="99"><span class="stat-name">Speed</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:99%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">99</span></div>
+              <div class="stat-row" data-stat="technique" data-val="99"><span class="stat-name">Technique</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:99%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">99</span></div>
+              <div class="stat-row" data-stat="flexibility" data-val="97"><span class="stat-name">Flexibility</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:97%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">97</span></div>
+              <div class="stat-row" data-stat="stamina" data-val="94"><span class="stat-name">Stamina</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:94%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">94</span></div>
+              <div class="stat-row" data-stat="aura" data-val="100"><span class="stat-name">Aura</span><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%;background:linear-gradient(90deg,#ff6b00,#ff9944);"></div></div><span class="stat-val">100</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD GALLERY -->
+      <div class="preview-panel" id="panel-cards">
+        <div style="text-align:center;margin-bottom:24px;">
+          <p style="color:var(--white60);font-size:0.9rem;">Every belt grade produces a different card rarity. Real student photos replace the silhouettes once uploaded.</p>
+        </div>
+        <div class="card-gallery" id="cardGallery"></div>
+        <div style="text-align:center;margin-top:28px;">
+          <a href="preview.html" class="btn-secondary">▶ Open Full Game Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <span class="section-label fade-up">How It Works</span>
+      <h2 class="section-title fade-up fade-up-delay-1">From purchase to live game in 48 hours</h2>
+      <div class="steps-grid" style="margin-top:48px;">
+        <div class="step-card fade-up">
+          <div class="step-num">01</div>
+          <div class="step-icon">💳</div>
+          <h3>Buy Your Licence</h3>
+          <p>One-time payment of £99.99. No monthly fees, no subscriptions, no percentage of your revenue. Ever.</p>
+          <span class="step-badge">£99.99 once</span>
+        </div>
+        <div class="step-connector fade-up">→</div>
+        <div class="step-card fade-up fade-up-delay-1">
+          <div class="step-num">02</div>
+          <div class="step-icon">🎨</div>
+          <h3>We Build Your Game</h3>
+          <p>Send us your student list and club branding. We set up your custom game with every student as a card. Live in 48–72 hours.</p>
+          <span class="step-badge">48–72 hours</span>
+        </div>
+        <div class="step-connector fade-up fade-up-delay-1">→</div>
+        <div class="step-card fade-up fade-up-delay-2">
+          <div class="step-num">03</div>
+          <div class="step-icon">💰</div>
+          <h3>Students Pay You</h3>
+          <p>Share your unique link with your club. Students pay £2.99 directly to your Stripe account. You manage everything from your admin panel.</p>
+          <span class="step-badge">£2.99 per student</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" style="background:var(--dark);">
+    <div class="container">
+      <div class="story-grid">
+        <div>
+          <span class="section-label fade-up">Real Results</span>
+          <h2 class="section-title fade-up fade-up-delay-1">We launched this for our own club first.</h2>
+          <p style="color:var(--white60);line-height:1.7;margin-bottom:24px;" class="fade-up fade-up-delay-2">We didn't just build a product — we tested it on our own club. 220 students signed up in the first two weeks. The game paid for itself in 34 sign-ups. Everything after that was profit.</p>
+          <div class="story-card fade-up">
+            <p class="quote">"I launched it on a Tuesday. By Friday I had 80 sign-ups. The kids were showing each other their cards at training. Parents were asking how to get their child's card upgraded. It became part of the club culture overnight."</p>
+            <div class="attribution">— <strong>Instructor, Train Taekwondo Schools</strong> · Week One</div>
+          </div>
+        </div>
+        <div class="revenue-breakdown fade-up fade-up-delay-1">
+          <h3>Week One Breakdown</h3>
+          <div class="rev-row"><span class="label">Students in club</span><span class="value">300+</span></div>
+          <div class="rev-row"><span class="label">Sign-ups in 14 days</span><span class="value" style="color:var(--gold);">220</span></div>
+          <div class="rev-row"><span class="label">Price per student</span><span class="value">£2.99</span></div>
+          <div class="rev-row"><span class="label">Gross revenue</span><span class="value">£657.80</span></div>
+          <div class="rev-row"><span class="label">Licence cost</span><span class="value" style="color:#f87171;">−£99.99</span></div>
+          <div class="rev-row total"><span class="label">Net revenue</span><span class="value" style="color:var(--gold);">£557.81</span></div>
+          <p style="font-size:0.8rem;color:var(--white30);margin-top:16px;line-height:1.6;">And every new student who joins the club pays £2.99. The game keeps earning as the club grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label fade-up">Revenue Calculator</span>
+        <h2 class="section-title fade-up fade-up-delay-1">What could your club earn?</h2>
+        <p class="section-sub fade-up fade-up-delay-2" style="margin:0 auto 48px;">Drag the slider to your club size. Based on 60% conversion — the real rate from our own launch.</p>
+      </div>
+      <div class="calc-card fade-up">
+        <h3>Your Club Revenue Estimator</h3>
+        <p style="color:var(--white60);font-size:0.9rem;margin-bottom:28px;">Assumes 60% of students sign up (our real conversion rate)</p>
+        <div class="calc-slider-row">
+          <label>Students in your club</label>
+          <span class="calc-num" id="calc-students">100</span>
+        </div>
+        <input type="range" id="student-slider" min="20" max="500" value="100" oninput="updateCalc()" />
+        <div class="calc-results">
+          <div class="calc-result-item">
+            <div class="calc-label">Students who pay</div>
+            <div class="calc-value" id="calc-paying">60</div>
+          </div>
+          <div class="calc-result-item">
+            <div class="calc-label">Gross Revenue</div>
+            <div class="calc-value" id="calc-gross">£179.40</div>
+          </div>
+          <div class="calc-result-item highlight">
+            <div class="calc-label">Net (after licence)</div>
+            <div class="calc-value" id="calc-net">£79.41</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" style="background:var(--dark);">
+    <div class="container">
+      <span class="section-label fade-up">Features</span>
+      <h2 class="section-title fade-up fade-up-delay-1">Everything included in your licence</h2>
+      <div class="features-grid" style="margin-top:48px;">
+        <div class="fade-up">
+          <div class="features-heading">For Instructors</div>
+          <div class="feature-list">
+            <div class="feature-item"><div class="feature-icon">🎨</div><div><div class="f-title">Custom Club Branding</div><div class="f-desc">Your club name, colours, and logo on every card and screen.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">👥</div><div><div class="f-title">Unlimited Students</div><div class="f-desc">No cap. Add, archive, and manage students freely as your club grows.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">⬆️</div><div><div class="f-title">Belt Upgrade Panel</div><div class="f-desc">Update belt grades in seconds. Stats update automatically on the card.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">📸</div><div><div class="f-title">Photo Approval Queue</div><div class="f-desc">Students submit photos, you approve before they go live. Full control.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">💳</div><div><div class="f-title">Direct Stripe Payments</div><div class="f-desc">Student payments go straight to your account. We take nothing.</div></div></div>
+          </div>
+        </div>
+        <div class="fade-up fade-up-delay-1">
+          <div class="features-heading">For Students</div>
+          <div class="feature-list">
+            <div class="feature-item"><div class="feature-icon">🃏</div><div><div class="f-title">Their Own Card</div><div class="f-desc">Every student gets a personalised card with their name, photo, belt, and stats.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">🤖</div><div><div class="f-title">1-Player vs CPU</div><div class="f-desc">Play solo against the computer — including legendary fighter cards.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">👫</div><div><div class="f-title">2-Player Online</div><div class="f-desc">Challenge a clubmate with a room code. Real-time battles.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">🏆</div><div><div class="f-title">Club Leaderboard</div><div class="f-desc">Compete for the top spot. Keeps students engaged between sessions.</div></div></div>
+            <div class="feature-item"><div class="feature-icon">⚡</div><div><div class="f-title">Legendary Fighter Cards</div><div class="f-desc">Bruce Lee, Chuck Norris, Jackie Chan, Ip Man — nearly impossible to beat.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label fade-up">Pricing</span>
+        <h2 class="section-title fade-up fade-up-delay-1">Simple, transparent pricing</h2>
+        <p class="section-sub fade-up fade-up-delay-2" style="margin:0 auto 48px;">No monthly fees. No percentage of your revenue. Just one licence and one student price.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card fade-up">
+          <div class="who">Students pay</div>
+          <div class="price">£2.99</div>
+          <div class="price-period">one-time · goes directly to you</div>
+          <ul class="price-features">
+            <li>✓ Their personalised card</li>
+            <li>✓ Access to the full game</li>
+            <li>✓ 1-player and 2-player modes</li>
+            <li>✓ Club leaderboard</li>
+            <li>✓ Legendary fighter cards</li>
+          </ul>
+        </div>
+        <div class="price-card featured fade-up fade-up-delay-1">
+          <div class="price-badge">Instructor Licence</div>
+          <div class="who" style="margin-top:8px;">You pay once</div>
+          <div class="price">£99.99</div>
+          <div class="price-period">one-time · no monthly fees</div>
+          <ul class="price-features">
+            <li>✓ Custom branded game for your club</li>
+            <li>✓ Unlimited students</li>
+            <li>✓ Admin panel with full control</li>
+            <li>✓ Belt upgrade tool</li>
+            <li>✓ Photo approval queue</li>
+            <li>✓ Direct Stripe payments setup</li>
+            <li>✓ 48–72 hour setup</li>
+            <li>✓ Founding club network access</li>
+          </ul>
+          <div class="price-note">Break even at just 34 student sign-ups. Everything after is profit.</div>
+          <a href="#cta" class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;display:flex;">Get Your Licence →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK -->
+  <section id="network" style="background:var(--dark);">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label coming-soon fade-up">Coming Soon</span>
+        <h2 class="section-title fade-up fade-up-delay-1">The Club Network</h2>
+        <p class="section-sub fade-up fade-up-delay-2" style="margin:0 auto 48px;">We're building a network where clubs can battle each other. Your students will be able to challenge students from other clubs around the country — and eventually the world.</p>
+      </div>
+      <div class="network-grid">
+        <div class="network-card fade-up"><div class="nc-icon">⚔️</div><h4>Cross-Club Battles</h4><p>Students from different clubs battle online. Your club's ranking rises with every win.</p></div>
+        <div class="network-card fade-up fade-up-delay-1"><div class="nc-icon">🌍</div><h4>National Leaderboard</h4><p>A live ranking of every club in the network. Bragging rights for the top club in the country.</p></div>
+        <div class="network-card fade-up fade-up-delay-2"><div class="nc-icon">🏅</div><h4>Founding Club Status</h4><p>Clubs who join now get founding status — a permanent badge on their game and priority access to the network at launch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label fade-up">FAQ</span>
+        <h2 class="section-title fade-up fade-up-delay-1">Common questions</h2>
+      </div>
+      <div class="faq-list" style="margin-top:48px;">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Do I need any technical skills to set this up? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">None at all. We build and set up everything for you. You just send us your student list and we handle the rest. Your admin panel is simple enough that anyone can use it — updating a belt grade takes about 10 seconds.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">How do I get paid? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">We set up a Stripe account connected to your bank. When a student pays £2.99, it goes directly into your Stripe account. We never touch your money — we don't take a percentage of student payments. Standard Stripe transaction fees (typically 1.4% + 20p per transaction) apply.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What happens when a student gets a new belt? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">You log into your admin panel and update their belt grade. Their card stats update automatically — no extra charge, no waiting. The student's card immediately reflects their new grade.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What if a student leaves the club? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">You can archive their card from the admin panel. It disappears from the active game but is kept on record. When a new student joins, you add them and they pay their £2.99. The game keeps earning as your club grows and changes.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Does this work for martial arts other than Taekwondo? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Absolutely. The game works for any martial art with a belt grading system — Karate, Kickboxing, BJJ, Judo, and more. We customise the card design and stats to match your discipline. Just mention your martial art when you enquire.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Is there a monthly fee? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">No. The £99.99 is a one-time licence fee. There are no monthly fees, no annual renewals, no hidden costs. You pay once and the game is yours to run indefinitely.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">How long does it take to go live? <span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Typically 48–72 hours after we receive your student list and branding details. We'll send you a preview link to approve before it goes live to your students.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="container">
+      <span class="section-label fade-up">Get Started</span>
+      <h2 class="fade-up fade-up-delay-1">Ready to launch your club's game?</h2>
+      <p class="fade-up fade-up-delay-2">220 students signed up in 14 days. £557.81 net in week one. Your students. Your cards. Your income.</p>
+      <form class="signup-form fade-up" id="signup-form" onsubmit="handleSignup(event)">
+        <input type="text" id="form-name" placeholder="Your name" required />
+        <input type="email" id="form-email" placeholder="Your email address" required />
+        <input type="text" id="form-club" placeholder="Your club name" required />
+        <button type="submit" class="btn-primary" style="justify-content:center;">🥋 Claim My Licence — £99.99 →</button>
+      </form>
+      <div id="success-msg" style="display:none;color:#4ade80;font-weight:700;font-size:1.1rem;margin-top:16px;">✅ Enquiry sent! We'll reply within 24 hours.</div>
+      <p style="color:var(--white30);font-size:0.8rem;margin-top:12px;" class="fade-up">Or email us directly: <a href="mailto:hello@tkdtrumpcards.co.uk" style="color:var(--gold);">hello@tkdtrumpcards.co.uk</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">TKD <span>TRUMP CARDS</span></div>
+          <p style="color:var(--white30);font-size:0.85rem;margin-top:12px;line-height:1.7;">Turn your students into collectible trading cards. Your club's own Top Trumps game — you keep the revenue.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <a href="#preview" class="footer-link">Game Preview</a>
+          <a href="preview.html" class="footer-link">Live Demo</a>
+          <a href="#how" class="footer-link">How It Works</a>
+          <a href="#pricing" class="footer-link">Pricing</a>
+          <a href="#faq" class="footer-link">FAQ</a>
+        </div>
+        <div>
+          <div class="footer-heading">Get Started</div>
+          <a href="#cta" class="footer-link">Get Your Licence</a>
+          <a href="for-instructors.html" class="footer-link">Instructor Details</a>
+          <a href="mailto:hello@tkdtrumpcards.co.uk" class="footer-link">hello@tkdtrumpcards.co.uk</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 TKD Trump Cards. All rights reserved.</span>
+        <span>Built by instructors, for instructors.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cards.js"></script>
+  <script src="battle.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

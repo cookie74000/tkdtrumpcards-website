@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKD Trump Cards — For Instructors</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .instr-hero {
+      padding: 140px 0 80px;
+      background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(245,200,0,0.1) 0%, transparent 70%);
+    }
+    .instr-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.5rem); margin-bottom: 16px; }
+    .instr-hero .subtitle { font-size: 1.2rem; color: var(--gold); font-weight: 700; margin-bottom: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .instr-hero p { font-size: 1.1rem; color: var(--white60); max-width: 600px; line-height: 1.7; margin-bottom: 36px; }
+    .process-section { padding: 80px 0; background: var(--dark); }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 24px; margin-top: 48px; }
+    .process-step { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 32px; }
+    .process-step .num { font-family: var(--font-display); font-size: 2.5rem; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: 12px; }
+    .process-step h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .process-step p { font-size: 0.9rem; color: var(--white60); line-height: 1.7; }
+    .checklist-section { padding: 80px 0; }
+    .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .check-item { display: flex; gap: 12px; align-items: flex-start; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .check-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .check-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+    .check-desc { font-size: 0.85rem; color: var(--white60); line-height: 1.6; }
+    .onboarding-section { padding: 80px 0; background: var(--dark); }
+    .onboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
+    .onboard-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 32px; }
+    .onboard-box h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 20px; color: var(--gold); letter-spacing: 0.05em; }
+    .onboard-list { display: flex; flex-direction: column; gap: 12px; }
+    .onboard-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--white60); line-height: 1.6; }
+    .onboard-item::before { content: "✓"; color: #4ade80; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .revenue-section { padding: 80px 0; }
+    .revenue-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+    .revenue-table th { text-align: left; padding: 12px 16px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white30); border-bottom: 1px solid var(--border); }
+    .revenue-table td { padding: 14px 16px; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
+    .revenue-table tr:last-child td { border-bottom: none; font-weight: 700; }
+    .revenue-table .highlight { color: var(--gold); font-family: var(--font-display); font-size: 1.1rem; }
+    .contact-section { padding: 80px 0; background: var(--dark); text-align: center; }
+    .contact-section h2 { font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 16px; }
+    .contact-section p { color: var(--white60); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; max-width: 520px; margin: 0 auto; text-align: left; }
+    .contact-form label { font-size: 0.85rem; font-weight: 700; color: var(--white60); margin-bottom: 4px; display: block; letter-spacing: 0.05em; text-transform: uppercase; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      padding: 14px 18px; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--white); font-family: var(--font-body); font-size: 1rem;
+      outline: none; transition: border-color 0.2s; width: 100%;
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 100px; resize: vertical; }
+    .contact-form select option { background: #1a1a2e; }
+    .urgency-banner { background: linear-gradient(135deg, rgba(232,0,29,0.15), rgba(245,200,0,0.08)); border: 1px solid rgba(245,200,0,0.25); border-radius: 16px; padding: 24px 32px; margin-bottom: 48px; display: flex; align-items: center; gap: 20px; }
+    .urgency-icon { font-size: 2rem; flex-shrink: 0; }
+    .urgency-text h4 { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); margin-bottom: 4px; }
+    .urgency-text p { font-size: 0.9rem; color: var(--white60); line-height: 1.6; }
+    @media (max-width: 700px) {
+      .checklist { grid-template-columns: 1fr; }
+      .onboard-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">TKD <span>TRUMP CARDS</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="preview.html">Game Demo</a>
+      <a href="index.html#calculator">Revenue Calculator</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get Started →</a>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="preview.html" onclick="toggleMobileMenu()">Game Demo</a>
+    <a href="#contact" class="mobile-cta" onclick="toggleMobileMenu()">Get Started →</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="instr-hero">
+    <div class="container">
+      <div class="urgency-banner">
+        <div class="urgency-icon">🏆</div>
+        <div class="urgency-text">
+          <h4>Founding Club Offer — Limited Availability</h4>
+          <p>The first clubs to join get priority access to the cross-club network when it launches, plus founding club status on their game. We're onboarding clubs in batches — secure your spot now.</p>
+        </div>
+      </div>
+      <div class="section-label">Instructor Onboarding</div>
+      <div class="subtitle">You're one step away from launching your club's game</div>
+      <h1>Here's exactly what<br>happens <span class="gold">next.</span></h1>
+      <p>This page is for instructors who are ready to get started. Below you'll find the full onboarding process, what we need from you, and how to get your game live within 48–72 hours.</p>
+      <a href="#contact" class="btn-primary">🥋 Claim Your Licence — £99.99</a>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="process-section">
+    <div class="container">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">From purchase to live game in 5 steps</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="num">01</div>
+          <h3>Fill in the form below</h3>
+          <p>Tell us your club name, martial art, and how many students you have. We'll reply within 24 hours with a payment link.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">02</div>
+          <h3>Pay the £99.99 licence</h3>
+          <p>One-time payment via Stripe. No monthly fees, no hidden costs. Your licence covers unlimited students.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">03</div>
+          <h3>Send us your student list</h3>
+          <p>A simple spreadsheet with student names, belt grades, and training years. We'll send you a template to fill in.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">04</div>
+          <h3>We build your game</h3>
+          <p>We set up your branded game with all your students as cards. Takes 48–72 hours. You'll get a preview link to approve before launch.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">05</div>
+          <h3>Share with your students</h3>
+          <p>You get a unique link to share with your club. Students pay £2.99 directly to your Stripe account. You're live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="checklist-section">
+    <div class="container">
+      <span class="section-label">What's Included</span>
+      <h2 class="section-title">Everything in your licence</h2>
+      <div class="checklist">
+        <div class="check-item"><div class="check-icon">🎨</div><div><div class="check-title">Custom Club Branding</div><div class="check-desc">Your club name and colours on every card and screen. Feels like your game, not ours.</div></div></div>
+        <div class="check-item"><div class="check-icon">👥</div><div><div class="check-title">Unlimited Students</div><div class="check-desc">No cap on how many students can be in your game. Add, archive, and manage freely.</div></div></div>
+        <div class="check-item"><div class="check-icon">⬆️</div><div><div class="check-title">Belt Upgrade Panel</div><div class="check-desc">Update any student's belt grade in seconds. Their card stats update automatically.</div></div></div>
+        <div class="check-item"><div class="check-icon">📸</div><div><div class="check-title">Photo Approval Queue</div><div class="check-desc">Students submit photos, you approve them before they go live. Full control over your game.</div></div></div>
+        <div class="check-item"><div class="check-icon">💳</div><div><div class="check-title">Direct Stripe Payments</div><div class="check-desc">Student payments go straight to your Stripe account. We don't take a percentage.</div></div></div>
+        <div class="check-item"><div class="check-icon">🏆</div><div><div class="check-title">Club Leaderboard</div><div class="check-desc">Students compete for the top spot on your club's leaderboard. Keeps engagement high.</div></div></div>
+        <div class="check-item"><div class="check-icon">🤖</div><div><div class="check-title">1-Player &amp; 2-Player Modes</div><div class="check-desc">Students can play solo vs CPU or challenge a friend online with a room code.</div></div></div>
+        <div class="check-item"><div class="check-icon">🌐</div><div><div class="check-title">Founding Club Network Access</div><div class="check-desc">Priority access to the cross-club battle network when it launches. Your students will be first in.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONBOARDING DETAILS -->
+  <div class="onboarding-section">
+    <div class="container">
+      <span class="section-label">What We Need From You</span>
+      <h2 class="section-title">Getting your game ready</h2>
+      <div class="onboard-grid">
+        <div class="onboard-box">
+          <h3>📋 Student List Format</h3>
+          <p style="font-size:0.9rem;color:var(--white60);margin-bottom:20px;line-height:1.7;">We'll send you a spreadsheet template. You'll need to fill in:</p>
+          <div class="onboard-list">
+            <div class="onboard-item">Student first name and last initial (e.g. Jamie K.)</div>
+            <div class="onboard-item">Current belt grade (e.g. Black Belt 1st Dan)</div>
+            <div class="onboard-item">Approximate years of training</div>
+            <div class="onboard-item">Competition wins (optional — boosts stats)</div>
+            <div class="onboard-item">Student photo (optional at launch — silhouette used until uploaded)</div>
+          </div>
+        </div>
+        <div class="onboard-box">
+          <h3>🎨 Club Branding</h3>
+          <p style="font-size:0.9rem;color:var(--white60);margin-bottom:20px;line-height:1.7;">To customise your game's look:</p>
+          <div class="onboard-list">
+            <div class="onboard-item">Club name (as it should appear on cards)</div>
+            <div class="onboard-item">Club logo (PNG or SVG preferred)</div>
+            <div class="onboard-item">Primary colour (hex code or describe it)</div>
+            <div class="onboard-item">Any specific styling preferences</div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--white30);margin-top:16px;line-height:1.6;">Don't worry if you don't have all of this — we can work with whatever you have and make it look great.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVENUE BREAKDOWN -->
+  <div class="revenue-section">
+    <div class="container">
+      <span class="section-label">Your Revenue</span>
+      <h2 class="section-title">The numbers that matter</h2>
+      <p class="section-sub">Based on our own club's real Week One results. Your numbers will vary, but the model is the same.</p>
+      <table class="revenue-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Students in Club</th>
+            <th>60% Sign Up</th>
+            <th>Gross Revenue</th>
+            <th>Net (after licence)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Small club</td><td>50</td><td>30</td><td>£89.70</td><td class="highlight">−£10.29</td></tr>
+          <tr><td>Break-even</td><td>56</td><td>34</td><td>£101.66</td><td class="highlight">£1.67</td></tr>
+          <tr><td>Typical club</td><td>100</td><td>60</td><td>£179.40</td><td class="highlight">£79.41</td></tr>
+          <tr><td>Our result</td><td>300</td><td>220</td><td>£657.80</td><td class="highlight">£557.81</td></tr>
+          <tr><td>Large club</td><td>500</td><td>300</td><td>£897.00</td><td class="highlight">£797.01</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:var(--white30);margin-top:16px;">This is ongoing revenue. Every new student who joins pays £2.99. The game keeps earning as your club grows. Stripe transaction fees (typically 1.4% + 20p per transaction) apply to student payments.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-section" id="contact">
+    <div class="container">
+      <span class="section-label">Get Started</span>
+      <h2>Claim your club's licence</h2>
+      <p>Fill in the form and we'll reply within 24 hours with your payment link and everything you need to get started.</p>
+      <form class="contact-form" onsubmit="handleInstructorForm(event)">
+        <div>
+          <label for="i-name">Your name</label>
+          <input type="text" id="i-name" placeholder="e.g. John Smith" required />
+        </div>
+        <div>
+          <label for="i-email">Email address</label>
+          <input type="email" id="i-email" placeholder="your@email.com" required />
+        </div>
+        <div>
+          <label for="i-club">Club name</label>
+          <input type="text" id="i-club" placeholder="e.g. Northside Taekwondo Academy" required />
+        </div>
+        <div>
+          <label for="i-art">Martial art</label>
+          <select id="i-art">
+            <option value="Taekwondo (TAGB)">Taekwondo (TAGB)</option>
+            <option value="Taekwondo (WTF/WT)">Taekwondo (WTF/WT)</option>
+            <option value="Karate">Karate</option>
+            <option value="Kickboxing">Kickboxing</option>
+            <option value="BJJ">Brazilian Jiu-Jitsu</option>
+            <option value="Judo">Judo</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="i-students">Approximate number of students</label>
+          <input type="number" id="i-students" placeholder="e.g. 120" min="1" required />
+        </div>
+        <div>
+          <label for="i-notes">Anything else we should know? (optional)</label>
+          <textarea id="i-notes" placeholder="e.g. We have multiple age groups, competition team, etc."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="margin-top:8px;">🥋 Send My Enquiry →</button>
+      </form>
+      <div id="instr-success" style="display:none;text-align:center;padding:32px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);border-radius:16px;color:#4ade80;font-weight:700;font-size:1.1rem;max-width:520px;margin:0 auto;">
+        ✅ Enquiry sent! We'll reply within 24 hours with your payment link and next steps.
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:center;gap:24px;">
+        <a href="index.html" class="footer-link">← Back to main site</a>
+        <span style="color:var(--white30);">© 2026 TKD Trump Cards</span>
+        <a href="preview.html" class="footer-link">Game Demo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleInstructorForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('i-name').value;
+      const email = document.getElementById('i-email').value;
+      const club = document.getElementById('i-club').value;
+      const art = document.getElementById('i-art').value;
+      const students = document.getElementById('i-students').value;
+      const notes = document.getElementById('i-notes').value;
+
+      const subject = encodeURIComponent(`TKD Trump Cards Instructor Enquiry — ${club}`);
+      const body = encodeURIComponent(`Hi,\n\nI'd like to get a TKD Trump Cards licence for my club.\n\nName: ${name}\nEmail: ${email}\nClub: ${club}\nMartial Art: ${art}\nNumber of Students: ${students}\nAdditional Notes: ${notes || 'None'}\n\nPlease send me the payment link and next steps.\n\nThanks,\n${name}`);
+      window.location.href = `mailto:hello@tkdtrumpcards.co.uk?subject=${subject}&body=${body}`;
+
+      document.querySelector('.contact-form').style.display = 'none';
+      document.getElementById('instr-success').style.display = 'block';
+    }
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
