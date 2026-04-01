@@ -93,7 +93,10 @@ function selectLegend(key) {
   if (nameEl) nameEl.textContent = legend.name;
   if (titleEl) { titleEl.textContent = legend.title; titleEl.style.color = legend.color; }
   if (portraitEl) portraitEl.style.background = legend.gradient;
-  if (svgEl) svgEl.innerHTML = legend.svg;
+  // Swap real photo
+  const photoEl = document.getElementById('legend-photo');
+  if (photoEl && legend.photo) { photoEl.src = legend.photo; photoEl.alt = legend.name; }
+  if (svgEl) svgEl.innerHTML = '';
   if (clubEl) clubEl.textContent = 'LEGENDS';
 
   // Update stats

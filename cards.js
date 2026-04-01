@@ -72,28 +72,33 @@ const LEGENDS = {
 
 const GALLERY_CARDS = [
   {
-    name: 'Sarah T.', belt: '● Black Belt 3rd Dan', rarity: 'BLACK', rarityClass: 'rarity-black',
+    name: 'Jake Roberts', belt: '● Black Belt 1st Dan', rarity: 'BLACK', rarityClass: 'rarity-black',
     bg: 'linear-gradient(160deg,#1a0a2e,#0a0a1a)', figColor: '#F5C800',
-    stats: { power:92, speed:88, technique:95, flexibility:82, stamina:89, aura:91 }
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/79kvvEBJspWmci3JJyfyv4/jake-roberts_843aec1d.png',
+    stats: { power:87, speed:92, technique:85, flexibility:78, stamina:83, aura:76 }
   },
   {
-    name: 'Marcus J.', belt: '● Red Belt', rarity: 'RED', rarityClass: 'rarity-red',
-    bg: 'linear-gradient(160deg,#2e0a0a,#1a0505)', figColor: '#E8001D',
-    stats: { power:75, speed:80, technique:72, flexibility:68, stamina:77, aura:65 }
+    name: 'Lucas Foster', belt: '● Black Belt 2nd Dan', rarity: 'BLACK', rarityClass: 'rarity-black',
+    bg: 'linear-gradient(160deg,#0a1a2e,#0a0a1a)', figColor: '#60a5fa',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/79kvvEBJspWmci3JJyfyv4/lucas-foster_c78c86a2.jpg',
+    stats: { power:74, speed:88, technique:91, flexibility:69, stamina:80, aura:82 }
   },
   {
-    name: 'Priya K.', belt: '● Blue Belt', rarity: 'BLUE', rarityClass: 'rarity-blue',
-    bg: 'linear-gradient(160deg,#0a1a2e,#050a1a)', figColor: '#60a5fa',
-    stats: { power:58, speed:65, technique:60, flexibility:72, stamina:55, aura:50 }
+    name: 'Gavin Cook', belt: '● Black Belt 5th Dan', rarity: 'BLACK', rarityClass: 'rarity-black',
+    bg: 'linear-gradient(160deg,#1a0a0a,#0a0505)', figColor: '#E8001D',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/79kvvEBJspWmci3JJyfyv4/gavin-cook_d91f224a.jpg',
+    stats: { power:95, speed:89, technique:97, flexibility:88, stamina:94, aura:98 }
   },
   {
     name: 'Bruce Lee', belt: '🐉 The Dragon', rarity: 'LEGEND', rarityClass: 'rarity-legend',
     bg: 'linear-gradient(160deg,#1a0800,#0a0500)', figColor: '#ff6b00',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/79kvvEBJspWmci3JJyfyv4/bruce-lee_63995f9d.jpg',
     stats: { power:88, speed:99, technique:99, flexibility:97, stamina:94, aura:100 }
   },
   {
     name: 'Chuck Norris', belt: '🤠 The Enforcer', rarity: 'LEGEND', rarityClass: 'rarity-legend',
     bg: 'linear-gradient(160deg,#1a0500,#0a0200)', figColor: '#ff6b00',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/79kvvEBJspWmci3JJyfyv4/chuck-norris_46e9edf3.jpg',
     stats: { power:99, speed:92, technique:96, flexibility:88, stamina:98, aura:97 }
   }
 ];
@@ -110,30 +115,34 @@ function buildCardHTML(card, small = false) {
     </div>`).join('');
 
   const isLegend = card.rarity === 'LEGEND';
-  const svgFill = card.figColor;
-  const portraitSVG = `<svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="fg${Math.random().toString(36).slice(2,6)}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${svgFill}" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="${svgFill}" stop-opacity="0.6"/>
-    </linearGradient></defs>
-    <ellipse cx="90" cy="35" rx="10" ry="12" fill="${svgFill}" opacity="0.9"/>
-    <rect x="82" y="46" width="16" height="28" rx="4" fill="${svgFill}" opacity="0.85"/>
-    <line x1="82" y1="52" x2="62" y2="42" stroke="${svgFill}" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
-    <line x1="98" y1="52" x2="118" y2="42" stroke="${svgFill}" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
-    <line x1="86" y1="74" x2="78" y2="108" stroke="${svgFill}" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
-    <line x1="94" y1="74" x2="102" y2="108" stroke="${svgFill}" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
-    <ellipse cx="90" cy="100" rx="40" ry="7" fill="${svgFill}" opacity="0.08"/>
-  </svg>`;
-
   const legendBorder = isLegend ? 'border-color:rgba(255,107,0,0.4);box-shadow:0 8px 32px rgba(255,107,0,0.2);' : '';
   const beltColor = isLegend ? 'color:#ff6b00;' : 'color:var(--gold-dark);';
+
+  let portraitContent;
+  if (card.photo) {
+    const demoBadge = isLegend ? `<div style="position:absolute;top:5px;right:5px;background:rgba(255,107,0,0.85);color:#fff;font-size:0.5rem;font-weight:700;padding:2px 5px;border-radius:3px;letter-spacing:0.08em;font-family:'Rajdhani',sans-serif;">DEMO</div>` : '';
+    portraitContent = `<div style="position:relative;width:100%;height:100%;">
+      <img src="${card.photo}" alt="${card.name}" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"/>
+      ${demoBadge}
+    </div>`;
+  } else {
+    const svgFill = card.figColor;
+    portraitContent = `<svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="90" cy="35" rx="10" ry="12" fill="${svgFill}" opacity="0.9"/>
+      <rect x="82" y="46" width="16" height="28" rx="4" fill="${svgFill}" opacity="0.85"/>
+      <line x1="82" y1="52" x2="62" y2="42" stroke="${svgFill}" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+      <line x1="98" y1="52" x2="118" y2="42" stroke="${svgFill}" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+      <line x1="86" y1="74" x2="78" y2="108" stroke="${svgFill}" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+      <line x1="94" y1="74" x2="102" y2="108" stroke="${svgFill}" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+    </svg>`;
+  }
 
   return `<div class="trump-card${isLegend?' legendary':''}" style="width:${small?'160px':'200px'};${legendBorder}">
     <div class="card-header">
       <span class="card-club">${isLegend ? 'LEGENDS' : 'Train TKD'}</span>
       <span class="card-rarity ${card.rarityClass}">${card.rarity}</span>
     </div>
-    <div class="card-portrait" style="background:${card.bg};">${portraitSVG}</div>
+    <div class="card-portrait" style="background:${card.bg};padding:0;overflow:hidden;">${portraitContent}</div>
     <div class="card-name-band">
       <div class="card-name">${card.name}</div>
       <div class="card-belt" style="${beltColor}">${card.belt}</div>
